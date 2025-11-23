@@ -44,11 +44,27 @@
           };
 
           treefmt = {
-            projectRootFile = "flake.nix";
+            projectRootFile = ".git/config";
+
+            # Nix
             programs.nixfmt.enable = true;
+
+            # Gleam
             programs.gleam.enable = true;
+
+            # TOML
+            programs.taplo.enable = true;
+            settings.formatter.taplo.excludes = [ "*/manifest.toml" ];
+
+            # GitHub Actions
             programs.actionlint.enable = true;
+
+            # Markdown
             programs.mdformat.enable = true;
+
+            # ShellScript
+            programs.shellcheck.enable = true;
+            programs.shfmt.enable = true;
           };
 
           packages = {
@@ -62,8 +78,8 @@
               pkgs.nil
 
               # Gleam-lang
-              pkgs.gleam
-              pkgs.erlang
+              pkgs.gleam # Compiler
+              pkgs.erlang # Runtime
             ];
           };
         };
