@@ -54,7 +54,7 @@
 
             # TOML
             programs.taplo.enable = true;
-            settings.formatter.taplo.excludes = [ "*/manifest.toml" ];
+            settings.formatter.taplo.excludes = [ "manifest.toml" ];
 
             # GitHub Actions
             programs.actionlint.enable = true;
