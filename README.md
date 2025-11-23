@@ -1,5 +1,7 @@
 # glnostr
 
+A gleam library to handle Nostr data type.
+
 ## Development
 
 ```sh
